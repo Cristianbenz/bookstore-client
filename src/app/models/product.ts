@@ -3,4 +3,5 @@ export interface Product {
     cover: string;
     authors: Array<string>;
     price: number;
+    stock: number;
 }

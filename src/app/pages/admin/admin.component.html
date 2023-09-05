@@ -1,0 +1,14 @@
+<mat-sidenav-container class="h-full">
+    <mat-sidenav class="py-3 h-screen" #sidenav mode="side">
+        <app-admin-nav></app-admin-nav>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="p-5">
+        <button class="flex flex-col gap-1" (click)="sidenav.toggle()">
+            <span class="bg-black h-1 w-5"></span>
+            <span class="bg-black h-1 w-5"></span>
+            <span class="bg-black h-1 w-5"></span>
+        </button>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

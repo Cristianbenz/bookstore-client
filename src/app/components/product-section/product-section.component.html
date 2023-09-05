@@ -1,0 +1,8 @@
+<section class="py-5 px-10 bg-gray-100">
+    <h2 class="pb-7 font-bold text-xl">{{title}}</h2>
+    <ul>
+        <li *ngFor="let prod of products">
+            <app-product-card [product]="prod"></app-product-card>
+        </li>
+    </ul>
+</section>
