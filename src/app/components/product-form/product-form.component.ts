@@ -1,13 +1,15 @@
-import { Component, inject } from '@angular/core';
+import { Component, Inject, Input, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule, FormBuilder, Validators } from "@angular/forms";
-
-import { MatNativeDateModule } from '@angular/material/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog"
-import { MatInputModule } from "@angular/material/input";
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { ReactiveFormsModule, FormBuilder } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { MatDatepickerModule } from "@angular/material/datepicker" 
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import {
+  MatCheckboxChange,
+  MatCheckboxModule,
+} from '@angular/material/checkbox';
+import { MatSelectChange, MatSelectModule } from '@angular/material/select';
 import { Product } from 'src/app/models/product';
 
 @Component({
@@ -17,49 +19,31 @@ import { Product } from 'src/app/models/product';
     CommonModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatFormFieldModule,
-    MatButtonModule,
     MatDatepickerModule,
-    MatNativeDateModule
-  ],
-  providers: [  
-    MatDatepickerModule,  
+    MatButtonModule,
+    MatCheckboxModule,
+    MatSelectModule,
   ],
   templateUrl: './product-form.component.html',
-  styles: [
-  ]
+  styles: [],
 })
 export class ProductFormComponent {
-  private _dialogRef: MatDialogRef<ProductFormComponent> = inject(MatDialogRef<ProductFormComponent>);
-  private _data: Product = inject(MAT_DIALOG_DATA);
-  private _formBuider: FormBuilder = inject(FormBuilder);
-  public productForm = this._formBuider.group({
-    title: [this._data?.title || '', Validators.required],
-    price: [this._data?.price || 0, Validators.required],
-    summary: [this._data?.summary || '', Validators.required],
-    authors: [this._data?.authors || '', Validators.required],
-    cover: [this._data?.cover || ''],
-    stock: [this._data?.stock || 0, Validators.required]
+  @Inject(MAT_DIALOG_DATA) product!: Product
+  private _dialogRef: MatDialogRef<ProductFormComponent> = inject(
+    MatDialogRef<ProductFormComponent>
+  );
+  private _formBuilder: FormBuilder = inject(FormBuilder);
+  discount = false;
+  public productForm = this._formBuilder.group({
+    title: [this.product.title ?? ''],
+    description: [this.product.title ?? ''],
+    stock: [this.product.title ?? 0],
+    price: [this.product.title ?? 0],
+    visibility: [this.product.title ?? 'enabled']
   });
 
-  public discount: boolean = false;
-
-  coverChange(evt: any) {
-    
-  }
-
-  discountChange(evt: any) {
-    this.discount = evt.target.checked;
-  }
-
-  upload() {
-    console.log(this.productForm.value)
-    this._dialogRef.close()
-
-    
-  }
-
-  now() {
-    return new Date().toISOString().split("T")[0]
+  onDiscountCheckbox(event: MatCheckboxChange) {
+    if (event.checked) this.discount = true;
+    else this.discount = false;
   }
 }
