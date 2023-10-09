@@ -1,0 +1,68 @@
+<form [formGroup]="productForm" class="flex flex-col gap-3 py-4 px-6">
+  <mat-form-field>
+    <mat-label>
+      Title
+    </mat-label>
+    <input matInput type="text" name="title" 
+      formControlName="title" 
+      maxlength="50" 
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>
+      Price
+    </mat-label>
+    <input matInput type="number" name="price" 
+      formControlName="price"
+      maxlength="4"
+      min="0"
+      max="9999"
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>
+      Stock
+    </mat-label>
+    <input matInput type="number" name="stock" 
+      formControlName="stock" 
+      maxlength="3"
+      min="0"
+      max="999"
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>
+      Description
+    </mat-label>
+    <textarea matInput type="number" name="description"
+      formControlName="description"
+      rows="3" 
+      maxlength="400"
+    >
+    </textarea>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select matInput formControlName="visibility">
+      <mat-option value="enabled">Enabled</mat-option>
+      <mat-option value="disabled">Disabled</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-checkbox (change)="onDiscountCheckbox($event)">
+    Add Discount
+  </mat-checkbox>
+  <section *ngIf="this.discount">
+    <mat-form-field>
+      <mat-label>Discount Period</mat-label>
+      <mat-date-range-input [rangePicker]="picker">
+        <input matStartDate placeholder="Start date" />
+        <input matEndDate placeholder="End date" />
+      </mat-date-range-input>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-date-range-picker #picker></mat-date-range-picker>
+    </mat-form-field>
+  </section>
+  <section class="flex gap-3">
+    <button>Cancel</button>
+    <button>Save</button>
+  </section>
+</form>

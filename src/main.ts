@@ -15,7 +15,8 @@ bootstrapApplication(RootComponent, {
         authorizationParams: {
             redirect_uri: window.location.origin
         }
-    })),
+    })
+    ),
     provideAnimations()
 ],
 
