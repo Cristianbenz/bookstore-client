@@ -7,8 +7,15 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/home/home.component').then(mod => mod.HomeComponent)
     },
     {
+        path: "discounts",
+        loadComponent: () => import("./pages/discounts/discounts.component").then(mod => mod.DiscountsComponent)
+    },
+    {
         path: "admin",
         loadChildren: () => import("./routes/admin-routes").then(mod => mod.routes)
     },
-    
+    {
+        path: "profile",
+        loadChildren: () => import("./routes/profile-routes").then(mod => mod.routes)
+    }
 ];

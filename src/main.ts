@@ -16,7 +16,7 @@ bootstrapApplication(RootComponent, {
             redirect_uri: window.location.origin
         }
     })),
-    provideAnimations()
+    provideAnimations(),
 ],
 
 });

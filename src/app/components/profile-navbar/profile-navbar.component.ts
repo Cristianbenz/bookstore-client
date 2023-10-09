@@ -4,22 +4,22 @@ import { RouterModule } from '@angular/router';
 import { IRoute } from 'src/app/models/route';
 
 @Component({
-  selector: 'app-admin-nav',
+  selector: 'app-profile-navbar',
   standalone: true,
   imports: [CommonModule, RouterModule],
-  templateUrl: './admin-nav.component.html',
+  templateUrl: './profile-navbar.component.html',
   styles: [
   ]
 })
-export class AdminNavComponent {
-  public routes:  Array<IRoute> = [
+export class ProfileNavbarComponent {
+  public routes: Array<IRoute> = [
     {
       route: "./",
-      content: "Productos"
+      content: "Perfil"
     },
     {
-      route: "users",
-      content: "Usuarios"
+      route: "history",
+      content: "Compras"
     }
   ]
 }

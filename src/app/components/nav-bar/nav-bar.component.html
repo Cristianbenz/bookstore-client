@@ -1,7 +1,13 @@
 <header class="w-full flex justify-end px-4 py-2 bg-gray-200 sticky">
     <nav class="flex justify-end items-center gap-3">
-        <span>Profile</span>
-        <app-sign-in-button *ngIf="!(state.isAuthenticated$ | async)" ></app-sign-in-button>
-        <app-sign-out-button *ngIf="(state.isAuthenticated$ | async)" ></app-sign-out-button>
+        <a *ngFor="let route of routes"
+            [routerLink]="route.route"
+            routerLinkActive="font-bold text-red-400"
+            [routerLinkActiveOptions]="{exact: true}"
+        >
+            {{route.content}}
+        </a>
+        <app-sign-in-button *ngIf="!(userState.isAuthenticated$ | async)" ></app-sign-in-button>
+        <app-sign-out-button *ngIf="(userState.isAuthenticated$ | async)" ></app-sign-out-button>
     </nav>
 </header>

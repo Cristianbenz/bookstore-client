@@ -1,0 +1,44 @@
+<form mat-form class="p-4" [formGroup]="productForm" (ngSubmit)="upload()">
+    <section class="flex flex-row gap-2">
+        <section class="flex flex-col">
+            <mat-form-field>
+                <mat-label>Titulo</mat-label>
+                <input matInput type="text" formControlName="title" name="title" />
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Autores</mat-label>
+                <input matInput type="text" formControlName="authors" name="authors" />
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Resumen</mat-label>
+                <textarea matInput formControlName="summary" name="summary"></textarea>
+            </mat-form-field>
+            <article class="flex flex-col gap-2 pb-4">
+                <label>Portada</label>
+                <input type="file" (change)="coverChange($event)" name="cover" />
+            </article>
+            <mat-form-field>
+                <mat-label>Stock</mat-label>
+                <input matInput type="number" formControlName="stock" name="stock" min="0" />
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Precio</mat-label>
+                <input matInput type="number" formControlName="price" name="price" min="0" />
+            </mat-form-field>
+        </section>
+        <section>
+            <article class="flex flex-col gap-1 justify-start">
+                <label>Descuento</label>
+                <input type="checkbox" name="discountCheck" (change)="discountChange($event)" />
+                <mat-form-field *ngIf="discount">
+                    <mat-label>Periodo</mat-label>
+                    <input matInput [matDatepicker]="picker" >
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </article>
+        </section>
+    </section>
+    <button class="mx-auto w-full" mat-raised-button color="accent" [disabled]="!productForm.valid">Subir</button>
+</form>

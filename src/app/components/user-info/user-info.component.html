@@ -1,0 +1,16 @@
+<section class="flex gap-3 p-10">
+    <img width="200px" height="200px" [src]="user.avatar" />
+    <section >
+        <h2 class="font-bold text-3xl pb-3">{{user.username}}</h2>
+        <article>
+            <span class="block font-bold">Email</span>
+           <p>{{user.email}}</p>
+        </article>
+        <article>
+            <span class="block font-bold">Nombre</span>
+           <p>{{user.firstName}}  {{user.lastName}}</p>
+        </article>
+    </section>
+</section>
+<h3 class="text-center py-3 text-2xl" >ADQUISICIONES</h3>
+<app-inventory></app-inventory>

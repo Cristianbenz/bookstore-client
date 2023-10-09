@@ -14,8 +14,11 @@ import { User } from 'src/app/models/user';
 export class UsersComponent {
   public users: Array<User> = [
     {
-      name: "John",
+      username: "user1",
       email: "john@gmail.com",
+      firstName: "John",
+      lastName: "Doe",
+      avatar: "https://muytecnologicos.com/wp-content/uploads/2023/04/Autenticacion-de-usuario.png",
       status: 1
     }
   ];

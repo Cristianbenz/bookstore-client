@@ -1,0 +1,7 @@
+<section class="w-11/12 mx-auto bg-gray-100 border-[25px] border-solid border-gray-400 shadow-inner">
+    <ul class="flex flex-wrap gap-3 p-4">
+        <li *ngFor="let product of products">
+            <img width="200px" height="300px" [src]="product.cover" />
+        </li>
+    </ul>
+</section>
