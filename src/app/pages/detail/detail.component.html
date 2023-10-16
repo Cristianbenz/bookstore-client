@@ -1,0 +1,11 @@
+<ng-container *ngIf="product">
+    <section class="detail-container">
+        <img class="cover" src="{{product.cover}}" />
+        <section>
+            <h1>{{product.title}}</h1>
+            <p>{{product.summary}}</p>
+            <span>{{product.price}}</span>
+            <span>{{product.stock}}</span>
+        </section>
+    </section>
+</ng-container>

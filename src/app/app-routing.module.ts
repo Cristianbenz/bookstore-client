@@ -7,6 +7,10 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/home/home.component').then(mod => mod.HomeComponent)
     },
     {
+        path: "detail/:id",
+        loadComponent: () => import("./pages/detail/detail.component").then(mod => mod.DetailComponent)
+    },
+    {
         path: "discounts",
         loadComponent: () => import("./pages/discounts/discounts.component").then(mod => mod.DiscountsComponent)
     },
@@ -17,5 +21,5 @@ export const routes: Routes = [
     {
         path: "profile",
         loadChildren: () => import("./routes/profile-routes").then(mod => mod.routes)
-    }
+    },
 ];

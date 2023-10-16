@@ -6,11 +6,12 @@ import { RouterModule } from '@angular/router';
 import { SignInButtonComponent } from '../sign-in-button/sign-in-button.component';
 import { SignOutButtonComponent } from '../sign-out-button/sign-out-button.component';
 import { IRoute } from 'src/app/models/route';
+import { CartComponent } from '../cart/cart.component';
 
 @Component({
   selector: 'app-nav-bar',
   standalone: true,
-  imports: [CommonModule, SignInButtonComponent, SignOutButtonComponent, RouterModule],
+  imports: [CommonModule, SignInButtonComponent, SignOutButtonComponent, RouterModule, CartComponent],
   templateUrl: './nav-bar.component.html',
   styles: [
   ]

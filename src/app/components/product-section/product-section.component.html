@@ -1,8 +1,11 @@
-<section class="py-5 px-10 bg-gray-100">
-    <h2 class="pb-7 font-bold text-xl">{{title}}</h2>
-    <ul>
-        <li *ngFor="let prod of products">
-            <app-product-card [product]="prod"></app-product-card>
-        </li>
-    </ul>
+<section class="product-section-container">
+    <h2 class="product-section-title">{{title}}</h2>
+    <swiper-container slides-per-view="1" navigation="true" pagination="true" >
+        <swiper-slide *ngFor="let prod of products">
+            <a routerLink="/detail/{{prod.id}}">
+                <app-product-card [product]="prod" ></app-product-card>
+            </a>
+        </swiper-slide>
+        ...
+    </swiper-container>
 </section>

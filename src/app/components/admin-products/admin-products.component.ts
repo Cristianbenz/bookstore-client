@@ -30,6 +30,7 @@ export class AdminProductsComponent {
 
   public products: Array<Product> = [
     {
+      id: 1123,
       title: 'Yo, Robot',
       authors: ['Isaac Asimov'],
       cover:

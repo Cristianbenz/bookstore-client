@@ -12,12 +12,24 @@ import { Product } from 'src/app/models/product';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  public products: Array<Product> = [{
-    title: "Yo, Robot",
-    authors: ["Isaac Asimov"],
-    cover: "https://www.penguinlibros.com/uy/1651349-thickbox_default/yo-robot.jpg",
-    summary: 'un librito',
-    price: 650.00,
-    stock: 20
-  }]
+  public products: Array<Product> = [
+    {
+      id: 89237,
+      title: "Yo, Robot",
+      authors: ["Isaac Asimov"],
+      cover: "https://www.penguinlibros.com/uy/1651349-thickbox_default/yo-robot.jpg",
+      summary: 'un librito',
+      price: 650.00,
+      stock: 20
+    },
+    {
+      id: 65299,
+      title: "Yo, Robot",
+      authors: ["Isaac Asimov"],
+      cover: "https://www.penguinlibros.com/uy/1651349-thickbox_default/yo-robot.jpg",
+      summary: 'un librito',
+      price: 650.00,
+      stock: 20
+    }
+  ]
 }

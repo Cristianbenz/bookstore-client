@@ -13,6 +13,7 @@ import { Product } from 'src/app/models/product';
 export class InventoryComponent {
   public products: Array<Product> = [
     {
+      id: 1234,
       title: "Yo, Robot",
       authors: ["Isaac Asimov"],
       cover: "https://www.penguinlibros.com/uy/1651349-thickbox_default/yo-robot.jpg",
@@ -21,6 +22,7 @@ export class InventoryComponent {
       stock: 20
     },
     {
+      id: 2388,
       title: "Yo, Robot",
       authors: ["Isaac Asimov"],
       cover: "https://www.penguinlibros.com/uy/1651349-thickbox_default/yo-robot.jpg",

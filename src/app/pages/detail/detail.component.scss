@@ -1,0 +1,7 @@
+.detail-container {
+  @apply flex gap-4 bg-gray-600 px-10 py-5;
+
+  .cover {
+    @apply w-80 h-96 rounded-xl;
+  }
+}

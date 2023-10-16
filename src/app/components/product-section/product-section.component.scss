@@ -1,0 +1,7 @@
+.product-section-container {
+    @apply py-5 px-10 bg-gray-100;
+
+    .product-section-title {
+        @apply pb-7 font-bold text-xl;
+    }
+}
